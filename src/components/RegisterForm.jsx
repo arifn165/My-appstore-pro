@@ -27,6 +27,11 @@ const RegisterForm = () => {
       {error && <p className="text-red-600 mb-3">{error}</p>}
 
       <form onSubmit={handleSubmit}>
+        <label className="block mb-2 font-semibold">Username :</label>
+        <input
+          type="username"
+          className="border p-2 w-full mb-4"
+        />
         <label className="block mb-2 font-semibold">Email</label>
         <input
           type="email"
@@ -37,6 +42,14 @@ const RegisterForm = () => {
         />
 
         <label className="block mb-2 font-semibold">Password</label>
+        <input
+          type="password"
+          required
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="border p-2 w-full mb-4"
+        />
+        <label className="block mb-2 font-semibold">Confirm Password</label>
         <input
           type="password"
           required

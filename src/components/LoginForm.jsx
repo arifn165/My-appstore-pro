@@ -10,7 +10,7 @@ const LoginForm = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // আগের পেজ এর path পাওয়া যাবে
+
   const from = location.state?.from?.pathname || "/";
 
   const handleSubmit = async (e) => {
@@ -18,7 +18,7 @@ const LoginForm = () => {
     setError("");
     try {
       await login(email, password);
-      // লগইন সফল হলে যেখানে আসতে চেয়েছিল সেখানে নিয়ে যাবে
+      
       navigate(from, { replace: true });
     } catch (err) {
       setError(err.message);

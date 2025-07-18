@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1",
+    "name": "Note Keeper",
+    "description": "A note taking app",
+    "image": "https://via.placeholder.com/150",
+    "category": "Productivity"
+  },
+  {
+    "id": "2",
+    "name": "WeatherNow",
+    "description": "Check weather instantly",
+    "image": "https://via.placeholder.com/150",
+    "category": "Utility"
+  }
+]

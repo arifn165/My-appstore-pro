@@ -3,7 +3,7 @@ import { AuthContext } from "../context/AuthContext";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const { user, logout } = useContext(AuthContext); // ✅ এখানে hook টি ব্যবহার করতে হবে
+  const { user, logout } = useContext(AuthContext);
 
   return (
     <nav className="">
@@ -29,11 +29,17 @@ const Navbar = () => {
           </button>
         </div>
       ) : (
-        <div className="flex gap-3">
-          <Link to="/login" className="text-blue-600 hover:underline">
+        <div className="flex gap-3 bg-blue-600 text-white p-4 justify-between">
+          <h1 className="text-xl font-bold">My AppStore</h1>
+          <div className="space-x-4">
+            <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+            <Link to="/contact">Contact</Link>
+          </div>
+          <Link to="/login" className="text-White-600 hover:underline">
             Login
           </Link>
-          <Link to="/register" className="text-blue-600 hover:underline">
+          <Link to="/register" className="text-White-600 hover:underline">
             Register
           </Link>
         </div>
