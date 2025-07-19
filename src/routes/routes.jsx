@@ -8,6 +8,7 @@ import RegisterForm from "../components/RegisterForm";
 import PrivateRoute from "../components/PrivateRoute";
 import Profile from "../pages/Profile";
 import AppDetails from "../pages/AppDetails";
+import NotFound from "../pages/NotFound";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
             <AppDetails />
           </PrivateRoute>
         ),
+      },
+      {
+        path:"/notfound",
+        Component:NotFound,
       },
     ],
   },
