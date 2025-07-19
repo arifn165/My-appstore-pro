@@ -1,49 +1,34 @@
-import React, { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
-import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
 
+  const navLink = "px-3 py-2 font-medium";
+  const activeClass = "text-blue-600 underline";
+
   return (
-    <nav className="">
-      {user ? (
-        <div className="bg-blue-600 text-white p-4 flex justify-between">
-          <h1 className="text-xl font-bold">My AppStore</h1>
-          <div className="space-x-4">
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <Link to="/contact">Contact</Link>
+    <nav className="bg-gray-100 shadow-md px-4 py-2 flex justify-between items-center">
+      <Link to="/" className="text-xl font-bold">📱 AppStore</Link>
+
+      <div className="flex gap-4">
+        <NavLink to="/" className={({ isActive }) => `${navLink} ${isActive ? activeClass : ""}`}>Apps</NavLink>
+        {user && (
+          <NavLink to="/profile" className={({ isActive }) => `${navLink} ${isActive ? activeClass : ""}`}>My Profile</NavLink>
+        )}
+      </div>
+
+      <div>
+        {user ? (
+          <div className="flex items-center gap-2">
+            <img src={user?.photoURL} alt="User" className="w-8 h-8 rounded-full" title={user.displayName} />
+            <button onClick={logout} className="text-red-600 font-semibold">Logout</button>
           </div>
-          <span className="text-sm font-medium">
-            Hi, {user.displayName || "User"}
-          </span>
-          <Link to="/profile" className="text-blue-600 hover:underline">
-            Profile
-          </Link>
-          <button
-            onClick={logout}
-            className="bg-red-500 text-white px-3 py-1 rounded"
-          >
-            Logout
-          </button>
-        </div>
-      ) : (
-        <div className="flex gap-3 bg-blue-600 text-white p-4 justify-between">
-          <h1 className="text-xl font-bold">My AppStore</h1>
-          <div className="space-x-4">
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <Link to="/contact">Contact</Link>
-          </div>
-          <Link to="/login" className="text-White-600 hover:underline">
-            Login
-          </Link>
-          <Link to="/register" className="text-White-600 hover:underline">
-            Register
-          </Link>
-        </div>
-      )}
+        ) : (
+          <Link to="/login" className="text-blue-600 font-semibold">Login</Link>
+        )}
+      </div>
     </nav>
   );
 };

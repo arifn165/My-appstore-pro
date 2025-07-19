@@ -1,16 +1,74 @@
 [
   {
-    "id": "1",
-    "name": "Note Keeper",
-    "description": "A note taking app",
-    "image": "https://via.placeholder.com/150",
-    "category": "Productivity"
+    "id": "app001",
+    "name": "Programming Hero",
+    "description": "Learn programming in a fun and interactive way.",
+    "image": "https://cdn-icons-png.flaticon.com/512/1055/1055646.png",
+    "category": "Education",
+    "downloads": 3500000,
+    "rating": 4.8
   },
   {
-    "id": "2",
-    "name": "WeatherNow",
-    "description": "Check weather instantly",
-    "image": "https://via.placeholder.com/150",
-    "category": "Utility"
+    "id": "app002",
+    "name": "Todo Master",
+    "description": "Keep track of your daily tasks efficiently.",
+    "image": "https://cdn-icons-png.flaticon.com/512/2921/2921222.png",
+    "category": "Productivity",
+    "downloads": 2200000,
+    "rating": 4.5
+  },
+  {
+    "id": "app003",
+    "name": "Math Champ",
+    "description": "Learn math with fun challenges.",
+    "image": "https://cdn-icons-png.flaticon.com/512/414/414927.png",
+    "category": "Education",
+    "downloads": 800000,
+    "rating": 4.3
+  },
+  {
+    "id": "app004",
+    "name": "Galaxy Fighters",
+    "description": "Fight and conquer the galaxy!",
+    "image": "https://cdn-icons-png.flaticon.com/512/616/616408.png",
+    "category": "Gaming",
+    "downloads": 2900000,
+    "rating": 4.7
+  },
+  {
+    "id": "app005",
+    "name": "FitLife",
+    "description": "Track your workouts and meals.",
+    "image": "https://cdn-icons-png.flaticon.com/512/742/742751.png",
+    "category": "Health",
+    "downloads": 1500000,
+    "rating": 4.2
+  },
+  {
+    "id": "app006",
+    "name": "Quick Notes",
+    "description": "Write and organize notes easily.",
+    "image": "https://cdn-icons-png.flaticon.com/512/1250/1250626.png",
+    "category": "Productivity",
+    "downloads": 1200000,
+    "rating": 4.1
+  },
+  {
+    "id": "app007",
+    "name": "Word Puzzle",
+    "description": "Sharpen your vocabulary with puzzles.",
+    "image": "https://cdn-icons-png.flaticon.com/512/109/109613.png",
+    "category": "Education",
+    "downloads": 900000,
+    "rating": 4.4
+  },
+  {
+    "id": "app008",
+    "name": "Battle Quest",
+    "description": "Epic multiplayer battles in a fantasy world.",
+    "image": "https://cdn-icons-png.flaticon.com/512/3064/3064147.png",
+    "category": "Gaming",
+    "downloads": 1700000,
+    "rating": 4.6
   }
 ]

@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext.jsx";
 
 const LoginForm = () => {
@@ -10,7 +10,6 @@ const LoginForm = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-
   const from = location.state?.from?.pathname || "/";
 
   const handleSubmit = async (e) => {
@@ -18,7 +17,7 @@ const LoginForm = () => {
     setError("");
     try {
       await login(email, password);
-      
+
       navigate(from, { replace: true });
     } catch (err) {
       setError(err.message);
@@ -35,7 +34,7 @@ const LoginForm = () => {
           type="email"
           required
           value={email}
-          onChange={e => setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
           className="border p-2 w-full mb-4"
         />
         <label className="block mb-2 font-semibold">Password</label>
@@ -43,7 +42,7 @@ const LoginForm = () => {
           type="password"
           required
           value={password}
-          onChange={e => setPassword(e.target.value)}
+          onChange={(e) => setPassword(e.target.value)}
           className="border p-2 w-full mb-4"
         />
         <button
@@ -53,6 +52,10 @@ const LoginForm = () => {
           Login
         </button>
       </form>
+      <p className="mt-3 text-sm">
+        Don't have an account?{" "}
+        <Link to="/register" className="text-blue-600 underline">Register</Link>
+      </p>
     </div>
   );
 };
