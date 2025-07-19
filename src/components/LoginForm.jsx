@@ -35,7 +35,7 @@ const LoginForm = () => {
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="border border-amber-500 p-2 w-full mb-4"
+          className="border border-amber-500 p-2 w-full mb-4 text-white"
         />
         <label className="block mb-2 font-semibold text-white">Password</label>
         <input

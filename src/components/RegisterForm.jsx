@@ -6,6 +6,7 @@ const RegisterForm = () => {
   const { register } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmpassword, setconfirmpassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -22,41 +23,55 @@ const RegisterForm = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-5 border rounded shadow">
-      <h2 className="text-2xl font-bold mb-5">Register</h2>
+    <div className="max-w-md mx-auto mt-10 p-5 border rounded shadow rounded-2xl hover:shadow-amber-400 shadow-xl bg-cyan-950">
+      <h2 className="text-2xl font-bold mb-5 text-white text-center">
+        Register
+      </h2>
       {error && <p className="text-red-600 mb-3">{error}</p>}
 
       <form onSubmit={handleSubmit}>
-        <label className="block mb-2 font-semibold">Username :</label>
+        <label className="block mb-2 font-semibold text-white">
+          Username :
+        </label>
         <input
           type="username"
-          className="border p-2 w-full mb-4"
+          placeholder="Type Your Username :"
+          className="border border-amber-400 p-2 w-full mb-4 text-white"
         />
-        <label className="block mb-2 font-semibold">Email</label>
+        <label className="block mb-2 font-semibold text-white">Email :</label>
         <input
           type="email"
           required
           value={email}
+          placeholder="Type Your Valide Email"
           onChange={(e) => setEmail(e.target.value)}
-          className="border p-2 w-full mb-4"
+          className="border border-amber-400 p-2 w-full mb-4 text-white"
         />
 
-        <label className="block mb-2 font-semibold">Password</label>
+        <label className="block mb-2 font-semibold text-white">
+          Password :
+        </label>
         <input
           type="password"
           required
           value={password}
+          placeholder="Type Your Password"
           onChange={(e) => setPassword(e.target.value)}
-          className="border p-2 w-full mb-4"
+          className="border border-amber-400 p-2 w-full mb-4 text-white"
         />
-        <label className="block mb-2 font-semibold">Confirm Password</label>
-        <input
-          type="password"
-          required
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="border p-2 w-full mb-4"
-        />
+        <div>
+          <label className="block mb-2 font-semibold text-white">
+            Confirm Password :
+          </label>
+          <input
+            type="Password"
+            required
+            value={confirmpassword}
+            placeholder="Type Must Same As Password :"
+            onChange={(e) => setconfirmpassword(e.target.value)}
+            className="border border-amber-400 p-2 w-full mb-4 text-white"
+          />
+        </div>
 
         <button
           type="submit"
