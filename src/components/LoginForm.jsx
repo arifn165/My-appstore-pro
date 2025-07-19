@@ -25,25 +25,25 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-5 border rounded shadow">
-      <h2 className="text-2xl font-bold mb-5">Login</h2>
+    <div className="max-w-md mx-auto mt-10 p-5 border rounded shadow hover:shadow-amber-400 shadow-xl bg-cyan-950">
+      <h2 className="text-2xl font-bold text-center text-white">Login</h2>
       {error && <p className="text-red-600 mb-3">{error}</p>}
       <form onSubmit={handleSubmit}>
-        <label className="block mb-2 font-semibold">Email</label>
+        <label className="block mb-2 font-semibold text-white">Email</label>
         <input
           type="email"
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="border p-2 w-full mb-4"
+          className="border border-amber-500 p-2 w-full mb-4"
         />
-        <label className="block mb-2 font-semibold">Password</label>
+        <label className="block mb-2 font-semibold text-white">Password</label>
         <input
           type="password"
           required
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="border p-2 w-full mb-4"
+          className="border border-amber-500 p-2 w-full mb-4"
         />
         <button
           type="submit"
@@ -52,9 +52,9 @@ const LoginForm = () => {
           Login
         </button>
       </form>
-      <p className="mt-3 text-sm">
+      <p className="mt-3 text-sm text-white">
         Don't have an account?{" "}
-        <Link to="/register" className="text-blue-600 underline">Register</Link>
+        <Link to="/register" className="text-white underline hover:text-pink-500">Register</Link>
       </p>
     </div>
   );

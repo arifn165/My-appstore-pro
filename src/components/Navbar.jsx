@@ -9,24 +9,24 @@ const Navbar = () => {
   const activeClass = "text-blue-600 underline";
 
   return (
-    <nav className="bg-gray-100 shadow-md px-4 py-2 flex justify-between items-center">
-      <Link to="/" className="text-xl font-bold">📱 AppStore</Link>
+    <nav className="bg-gray-900 shadow-md px-4 py-2 flex justify-between items-center">
+      <Link to="/" className="text-xl font-bold text-white">📱 AppStore</Link>
 
       <div className="flex gap-4">
-        <NavLink to="/" className={({ isActive }) => `${navLink} ${isActive ? activeClass : ""}`}>Apps</NavLink>
+        <NavLink to="/" className={({ isActive }) => `${navLink} ${isActive ? activeClass : ""} text-white`}>Apps</NavLink>
         {user && (
-          <NavLink to="/profile" className={({ isActive }) => `${navLink} ${isActive ? activeClass : ""}`}>My Profile</NavLink>
+          <NavLink to="/profile" className={({ isActive }) => `${navLink} ${isActive ? activeClass : ""} text-white`}>My Profile</NavLink>
         )}
       </div>
 
       <div>
         {user ? (
           <div className="flex items-center gap-2">
-            <img src={user?.photoURL} alt="User" className="w-8 h-8 rounded-full" title={user.displayName} />
-            <button onClick={logout} className="text-red-600 font-semibold">Logout</button>
+            <span className="font-extrabold bg-amber-600 border p-3 rounded-3xl text-white text-2xl hover:bg-pink-500">{user.displayName}</span>
+            <button onClick={logout} className="text-white font-semibold text-xl hover: underline">Logout</button>
           </div>
         ) : (
-          <Link to="/login" className="text-blue-600 font-semibold">Login</Link>
+          <Link to="/login" className="text-white font-semibold hover:underline">Login</Link>
         )}
       </div>
     </nav>
