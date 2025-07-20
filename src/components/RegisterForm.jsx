@@ -6,6 +6,7 @@ const RegisterForm = () => {
   const { register } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
   const [confirmpassword, setconfirmpassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -34,7 +35,9 @@ const RegisterForm = () => {
           Username :
         </label>
         <input
-          type="username"
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
           placeholder="Type Your Username :"
           className="border border-amber-400 p-2 w-full mb-4 text-white"
         />
